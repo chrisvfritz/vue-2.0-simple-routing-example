@@ -1,20 +1,18 @@
 import Vue from 'vue'
+import page from 'page'
 import routes from './routes'
 
 const app = new Vue({
   el: '#app',
   data: {
-    currentRoute: window.location.pathname
+    ViewComponent: { render: h => h('div', 'loading...') }
   },
-  render (h) {
-    const matchingView = routes[this.currentRoute]
-    const ViewComponent = matchingView
-      ? require('./pages/' + matchingView + '.vue').default
-      : require('./pages/404.vue').default
-    return h(ViewComponent)
-  }
+  render (h) { return h(this.ViewComponent) }
 })
 
-window.addEventListener('popstate', () => {
-  app.currentRoute = window.location.pathname
+Object.keys(routes).forEach(route => {
+  const Component = require('./pages/' + routes[route] + '.vue').default
+  page(route, () => app.ViewComponent = Component)
 })
+page('*', () => app.ViewComponent = require('./pages/404.vue').default)
+page()
