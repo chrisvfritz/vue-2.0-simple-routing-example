@@ -1,4 +1,4 @@
-# simple-routing-test
+# simple-routing-example
 
 > A Vue.js project
 
