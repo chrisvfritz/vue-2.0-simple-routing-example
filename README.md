@@ -1,6 +1,6 @@
-# simple-routing-example
+# Vue 2.0 Simple Routing Example
 
-> A Vue.js project
+> A simple example of routing with Vue 2.0 without using vue-router.
 
 ## Build Setup
 
@@ -15,4 +15,4 @@ npm run dev
 npm run build
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+For a detailed explanation of the build process, read the [docs for vue-loader](http://vuejs.github.io/vue-loader).
