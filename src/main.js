@@ -6,13 +6,15 @@ const app = new Vue({
   data: {
     currentRoute: window.location.pathname
   },
-  render (h) {
-    const matchingView = routes[this.currentRoute]
-    const ViewComponent = matchingView
-      ? require('./pages/' + matchingView + '.vue').default
-      : require('./pages/404.vue').default
-    return h(ViewComponent)
-  }
+  computed: {
+    ViewComponent () {
+      const matchingView = routes[this.currentRoute]
+      return matchingView
+        ? require('./pages/' + matchingView + '.vue').default
+        : require('./pages/404.vue').default
+    }
+  },
+  render (h) { return h(this.ViewComponent) }
 })
 
 window.addEventListener('popstate', () => {
