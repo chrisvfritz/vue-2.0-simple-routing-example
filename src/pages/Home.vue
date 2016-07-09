@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <main-layout>
-      <p>Welcome home</p>
-    </main-layout>
-  </div>
+  <main-layout>
+    <p>Welcome home</p>
+  </main-layout>
 </template>
 
 <script>
