@@ -8,10 +8,10 @@ const app = new Vue({
   },
   render (h) {
     const matchingView = routes[this.currentRoute]
-    const View = matchingView
+    const ViewComponent = matchingView
       ? require('./pages/' + matchingView + '.vue').default
       : require('./pages/404.vue').default
-    return h(View)
+    return h(ViewComponent)
   }
 })
 
