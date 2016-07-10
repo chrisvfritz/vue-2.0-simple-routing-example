@@ -12,7 +12,8 @@
 
   export default {
     props: {
-      href: String
+      href: String,
+      required: true
     },
     computed: {
       isActive () {
