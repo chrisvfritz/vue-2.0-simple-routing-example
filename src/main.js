@@ -10,11 +10,13 @@ const app = new Vue({
     ViewComponent () {
       const matchingView = routes[this.currentRoute]
       return matchingView
-        ? require('./pages/' + matchingView + '.vue').default
-        : require('./pages/404.vue').default
+        ? require('./pages/' + matchingView + '.vue')
+        : require('./pages/404.vue')
     }
   },
-  render (h) { return h(this.ViewComponent) }
+  render (h) {
+    return h(this.ViewComponent)
+  }
 })
 
 window.addEventListener('popstate', () => {
