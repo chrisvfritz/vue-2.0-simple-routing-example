@@ -13,8 +13,10 @@
 
   export default {
     props: {
-      href: String,
-      required: true
+      href: {
+        type:String,
+        required: true 
+      }
     },
     computed: {
       isActive () {
